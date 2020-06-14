@@ -1,0 +1,69 @@
+{{!< default}}
+
+{{#author}}
+
+  {{log this}}
+  <header class="cover archive-header {{#if cover_image}}black{{else}}{{/if}}">
+    {{#if cover_image}}
+      <div class="cover-bg" style="background-image: url({{cover_image}});"></div>
+    {{else}}
+      <div class="cover-bg"></div>
+    {{/if}}
+    <div class="inner-wide">
+      <div class="cover-content">
+        <div class="archive-author">
+          {{#if profile_image}}
+            <div class="author-image">
+              <img src="{{profile_image}}" alt="{{name}}" />
+            </div>
+          {{/if}}
+          <div class="author-meta">
+            <h2 class="author-name">{{name}}</h2>
+            {{#if location}}
+              <p class="author-location">
+                <span class="author-social-item">
+                  {{> icons/place}}
+                </span>
+                {{location}}
+              </p>
+            {{/if}}
+            {{#if bio}}
+              <p class="author-bio">{{bio}}</p>
+            {{/if}}
+
+            <ul class="author-social">
+              {{#if facebook}}
+                <li class="author-social-item">
+                  <a target="_blank" href="{{facebook_url}}">{{> icons/social/facebook}}</a>
+                </li>
+              {{/if}}
+              {{#if twitter}}
+                <li class="author-social-item">
+                  <a target="_blank" href="{{twitter_url}}">{{> icons/social/twitter}}</a>
+                </li>
+              {{/if}}
+              {{#if website}}
+                <li class="author-social-item">
+                  <a target="_blank" href="{{website}}">{{> icons/link}}</a>
+                </li>
+              {{/if}}
+              <li class="author-social-item">
+                <a target="_blank" href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/">
+                  {{> icons/social/rss}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{{/author}}
+
+<div class="inner-wide full-wrapper">
+  <div class="archive-feed">
+    {{#foreach posts visibility="all"}}
+      {{> "grid-item" class="cropped left big"}}
+    {{/foreach}}
+  </div>
+</div>

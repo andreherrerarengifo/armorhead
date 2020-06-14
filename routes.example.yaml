@@ -1,0 +1,76 @@
+routes:
+  /:
+    template: home
+
+  /membership/:
+    data: page.membership
+    template: membership
+
+  /newsletter/:
+    data: page.newsletter
+    template: newsletter
+
+  /contact/:
+    data: page.contact
+    template: contact
+
+  /signup/:
+    data: page.signup
+    template: members/signup
+
+  /signin/:
+    data: page.signin
+    template: members/signin
+
+  /account/: members/account
+
+  /authors/:
+    data: page.authors
+    template: authors
+
+  /tags/:
+    data: page.tags
+    template: tags
+
+  /channels/:
+    data: page.channels
+    template: channels
+
+  /travel/:
+    data: page.travel
+    controller: channel
+    template: channel
+    filter: tag:[cities,food,places,gear]
+
+  /food/:
+    data: page.food
+    controller: channel
+    template: channel
+    filter: tag:[chocolate,breads,noodles,appetizers‎,vegetables]
+
+  /design/:
+    data: page.design
+    controller: channel
+    template: channel
+    filter: tag:[urban,products,fashion,environmental]
+
+  /art/:
+    data: page.art
+    controller: channel
+    template: channel
+    filter: tag:[studio,journals,fiction,aesthetics]
+
+  /entertainment/:
+    data: page.entertainment
+    controller: channel
+    template: channel
+    filter: tag:[music,video,trivia,dance,humor]
+
+collections:
+  /global/:
+    permalink: /global/{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

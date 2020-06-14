@@ -1,0 +1,101 @@
+<div class="ss sidebar">
+	<div class="header inner-wide">
+		<a class="logo" href="/">
+			{{#if @site.logo}}
+				<img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+			{{else}}
+				{{@site.title}}
+			{{/if}}
+		</a>
+		<button id="menu-close">
+			{{> icons/close}}
+		</button>
+	</div>
+
+	<div class="widget-area">
+
+		<div class="widget widget-navigation">
+			<h2 class="widget-title">{{t "Explore Website"}}</h2>
+			<ul class="widget-nav">
+				{{#get "pages" filter="tag:hash-main-menu" order="published_at asc"}}
+					{{#if pages}}
+						{{#foreach pages visibility="all"}}
+							<li class="menu-item"><a href="{{url}}">{{title}}</a></li>
+						{{/foreach}}
+					{{/if}}
+				{{/get}}
+				{{navigation type="primary"}}
+			</ul>
+		</div>
+
+		{{#get "pages" filter="tag:hash-display-sidebar-channels" order="published_at asc"}}
+			{{#if pages}}
+				<div class="widget widget-accordion accordion">
+					{{#foreach pages}}
+						<h2 class="widget-title">{{title}}</h2>
+					{{/foreach}}
+					<div class="accordion-items">
+						{{#get "pages" filter="tag:hash-sidebar-channel" order="published_at asc"}}
+							{{#if pages}}
+								{{#foreach pages visibility="all"}}
+									<div class="accordion-item">
+										<div class="accordion-title noselect">
+											<a href="{{url}}">
+												{{title}}
+											</a>
+										</div>
+									</div>
+								{{/foreach}}
+
+							{{/if}}
+						{{/get}}
+					</div>
+				</div>
+			{{/if}}
+		{{/get}}
+
+		{{#get "pages" filter="tag:hash-sidebar-newsletter"}}
+			{{#if pages}}
+				{{#foreach pages}}
+					<div class="widget widget-form">
+						<h2 class="widget-title">{{title}}</h2>
+						<form data-members-form="signin" class="signup-form">
+							<div class="form-group">
+								<div class="form-text">{{content}}</div>
+								<input data-members-email="" class="c-input subscribe-email" type="email" name="email" placeholder="Your email address">
+								<button class="ui button black" type="submit">
+									<span class="button-content">{{t "Send login link"}}</span>
+									<span class="button-loader">{{> "icons/loader"}}</span>
+								</button>
+							</div>
+							<div class="message message-signin-success">
+								{{t "Great! Check your inbox and click the link to complete signin."}}
+							</div>
+							<div class="message message-signup-success">
+								{{t "Great! Check your inbox and click the link to confirm your subscription."}}
+							</div>
+							<div class="message message-invalid">
+								Please enter a valid email address!
+							</div>
+							<div class="message message-error">
+								There was an error sending the email, please try again.
+							</div>
+						</form><!-- signin-form -->
+					</div>
+				{{/foreach}}
+			{{/if}}
+		{{/get}}
+
+		{{#get "pages" filter="tag:hash-sidebar-widget" include="tags" order="published_at asc"}}
+			{{#if pages}}
+				{{#foreach pages}}
+					<div class="widget widget-sidebar {{#foreach tags}} {{name}}{{/foreach}}">
+						<h2 class="widget-title">{{title}}</h2>
+						<div class="">{{content}}</div>
+					</div>
+				{{/foreach}}
+			{{/if}}
+		{{/get}}
+
+	</div>
+</div>

@@ -1,0 +1,133 @@
+{{!< ../default}}
+<div class="site-content">
+	{{#if @member.paid}}
+		{{!-- Logged in, paying member: Show account info --}}
+		<div class="subscriber-box ">
+			{{#foreach @member.subscriptions}}
+				<div class="subscription">
+					<div class="subscriber-header">
+						<div class="subscription-title">
+							{{#if @first}}
+								<h1>{{t "Your account"}}</h1>
+							{{/if}}
+							{{#if cancel_at_period_end}}
+								<p>
+								<strong class="subscription-expiration-warning">{{t "Your subscription will expire on"}} {{date current_period_end format="DD MMM YYYY"}}.</strong> {{t "If you change your mind in the meantime you can turn auto-renew back on to continue your subscription."}}
+								</p>
+							{{else}}
+								<p>
+									{{t "Hey! You have an active account with access to all areas. Get in touch if have any problems or need some help getting things updated, and thanks for subscribing."}}
+								</p>
+							{{/if}}
+						</div>
+					</div>
+					<div class="subscriber-details">
+						<div class="subscriber-detail">
+							<label class="subscriber-detail-label">{{t "Email address"}}</label>
+							<span class="subscriber-detail-content">{{@member.email}}</span>
+						</div>
+
+						<div class="subscriber-detail">
+							<label class="subscriber-detail-label">{{t "Your plan"}}</label>
+							<span class="subscriber-detail-content">{{plan.currency_symbol}}{{price plan.amount}}/{{plan.interval}}</span>
+						</div>
+
+						<div class="subscriber-detail">
+							<label class="subscriber-detail-label">{{t "Card"}}</label>
+							<span class="subscriber-detail-content">**** **** **** {{default_payment_card_last4}}</span>
+						</div>
+
+						<div class="subscriber-detail">
+							<label class="subscriber-detail-label">
+								{{#if cancel_at_period_end}}
+									{{t "Expires"}}
+								{{else}}
+									{{t "Next bill date"}}
+								{{/if}}
+							</label>
+							<span class="subscriber-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
+						</div>
+
+					</div>
+
+					<ul class="subscription-actions">
+						<li class="test"><a class="gh-subscription-edit ui button" href="javascript:" data-members-edit-billing data-members-success="{{@site.url}}/account/?stripe=billing-update-success" data-members-cancel="{{@site.url}}/account/?stripe=billing-update-cancel">{{t "Edit billing info"}}</a>
+						</li>
+						<li>{{cancel_link class="gh-subscription-cancel ui button"}}</li>
+					</ul>
+				</div>
+			{{/foreach}}
+		</div>
+	{{else if @member}}
+		{{!-- Logged in, not paying: Link to checkout --}}
+		<div class="subscriber-box inner">
+			<div class="subscription">
+				<div class="subscriber-header">
+					<div class="subscription-title">
+						<h1>Your account</h1>
+						<p>
+						{{t "You've an active account with access to posts for subscribers only. Upgrade your account and get access to the full library of posts."}}
+						</p>
+					</div>
+				</div>
+				<div class="subscriber-details">
+					<div class="subscriber-detail">
+						<label class="subscriber-detail-label">{{t "Email address"}}</label>
+						<span class="subscriber-detail-content">{{@member.email}}</span>
+					</div>
+
+					<div class="subscriber-detail">
+						<label class="subscriber-detail-label">{{t "Your plan"}}</label>
+						<span class="subscriber-detail-content">{{t "Free"}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="membership-box inner-wide">
+			<div class="membership-plans">
+				<div class="membership-plan monthly">
+					<div class="membership-plan-header">
+						<h3>Monthly</h3>
+						<div class="membership-amount"><span class="membership-amount-sign">{{@price.currency_symbol}}</span>{{@price.monthly}}</div>
+					</div>
+					<div class="membership-plan-footer">
+						<a class="ui button ahblue" href="javascript:void(0)" data-members-plan="Monthly">{{t "Subscribe Now"}}</a>
+					</div>
+					<div class="membership-plan-content">
+						<ul>
+							<li class="membership-plan-feature">{{t "Full access to all private posts"}}</li>
+							<li class="membership-plan-feature">{{t "Weekly email newsletter"}}</li>
+							<li class="membership-plan-feature">{{t "No advertising"}}</li>
+							<li class="membership-plan-feature">{{t "Support independent publishing"}}</li>
+							<li class="membership-plan-feature">{{t "Simple, secure card payment"}}</li>
+						</ul>
+					</div>
+				</div><!-- .membership-plan -->
+				<div class="membership-plan yearly">
+					<div class="membership-plan-header">
+						<h3>Yearly</h3>
+						<div class="membership-amount"><span class="membership-amount-sign">{{@price.currency_symbol}}</span>{{@price.yearly}}</div>
+					</div>
+					<div class="membership-plan-footer">
+						<a class="ui button ahblue" href="javascript:void(0)" data-members-plan="Yearly">{{t "Subscribe Now"}}</a>
+					</div>
+					<div class="membership-plan-content">
+						<ul>
+							<li class="membership-plan-feature">{{t "Full access to all private posts"}}</li>
+							<li class="membership-plan-feature">{{t "Weekly email newsletter"}}</li>
+							<li class="membership-plan-feature">{{t "No advertising"}}</li>
+							<li class="membership-plan-feature">{{t "Support independent publishing"}}</li>
+							<li class="membership-plan-feature">{{t "Simple, secure card payment"}}</li>
+							<li class="membership-plan-feature">{{t "One easy payment instead of 12!"}}</li>
+						</ul>
+					</div>
+				</div><!-- .membership-plan -->
+			</div><!-- membership-plans -->
+		</div>
+	{{else}}
+		{{!-- Not logged in: Redirect to signin --}}
+		<script>
+			window.location = '{{@site.url}}/signin/';
+		</script>
+	{{/if}}
+</div>

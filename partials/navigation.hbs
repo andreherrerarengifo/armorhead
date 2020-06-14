@@ -1,0 +1,18 @@
+{{#if isSecondary}}
+  <!-- secondary navigation -->
+  <ul class="social nav" role="menu">
+    {{#foreach navigation}}
+      <li class="social-item nav-{{slug}}" role="menuitem">
+        <a target="_blank" href="{{url}}" class="social-link">
+            <svg width="20" height="20" role="img" aria-label="{{slug}} icon">
+                <use xlink:href="#{{slug}}"></use>
+            </svg>
+         </a>
+      </li>
+    {{/foreach}}
+  </ul>
+{{else}}
+  {{#foreach navigation}}
+    <li class="menu-item"><a href="{{url absolute="true"}}">{{label}}</a></li>
+  {{/foreach}}
+{{/if}}

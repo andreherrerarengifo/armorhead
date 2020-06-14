@@ -1,0 +1,75 @@
+<footer class="site-footer">
+	<div class="site-footer-inside">
+
+		<div class="inner-wide">
+			<div class="site-footer-top">
+				<div class="site-footer-branding">
+					<a href="/">
+						{{#if @site.logo}}
+							<img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+						{{else}}
+							<div class="site-title">
+								{{@site.title}}
+							</div>
+						{{/if}}
+					</a>
+				</div>
+				<div class="site-social">
+					{{navigation type="secondary"}}
+				</div>
+			</div>
+		</div>
+
+		{{#get "pages" filter="tag:hash-display-footer"}}
+			{{#if pages}}
+				<div class="inner-wide">
+					<div class="site-footer-bottom">
+						<div class="footer-navigation">
+							<div class="accordion">
+								{{#get "pages" filter="tag:hash-footer-channel" include="tags" order="published_at asc"}}
+									{{#if pages}}
+										{{#foreach pages visibility="all"}}
+											<div class="accordion-item">
+												<h5><a href="{{url}}" class="accordion-title-link">{{title}}</a></h5>
+												<h5 class="accordion-title noselect">{{title}}</h5>
+												<ul class="accordion-sub">
+													{{#foreach tags}}
+														<li class="accordion-sub-item"><a href="{{url}}">{{name}}</a></li>
+													{{/foreach}}
+												</ul>
+											</div>
+										{{/foreach}}
+									{{/if}}
+								{{/get}}
+								<div class="accordion-item fill">
+								</div>
+
+								<div class="accordion-pusher">
+									{{#foreach pages}}
+											<div class="accordion-item">
+												<h5 class="accordion-title noselect">{{title}}</h5>
+												<ul class="accordion-sub">
+													{{content}}
+												</ul>
+											</div>
+									{{/foreach}}
+								</div>
+							</div>
+						</div>
+						<!--.footer-navigation-->
+					</div>
+					<!--.site-footer-bottom-->
+				</div>
+			{{/if}}
+		{{/get}}
+
+		<div class="site-watermark">
+			<div class="inner-wide">
+				<div class="site-watermark-inside">
+					Dev - Thoughts, stories and ideas
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--.site-footer-inside-->
+</footer>

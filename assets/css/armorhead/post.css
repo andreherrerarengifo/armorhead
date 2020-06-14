@@ -1,0 +1,714 @@
+.post-header {
+	margin-top: 2rem;
+}
+
+.post.no-image.page .post-header {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.post.full .post-header {
+  margin-top: 0;
+}
+
+.post-header > * + * {
+}
+
+.post-tag {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	font-family: "cooper hewitt";
+	font-weight: 700;
+}
+
+.post-title {
+  font-weight: 400;
+	margin-top: 0.5rem;
+}
+
+.banner .post-title {
+	margin-top: 0;
+}
+
+.page .post-title {
+	font-size: 2.4rem;
+}
+
+@media (min-width: 550px) {
+	.page .post-title {
+		font-size: 3.4rem;
+	}
+}
+
+.post-excerpt {
+  color: #333;
+	font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.post-image {
+	margin-top: 1.5rem;
+}
+
+.post.full .post-image {
+  margin-top: 0;
+}
+
+.post-authors {
+	display: flex;
+	align-items: center;
+	font-family: "cooper hewitt";
+	margin: 1.5rem 0 0.75rem;
+}
+
+.post-authors > * {
+	display: inline-block;
+	margin-right: 0.65rem;
+}
+
+.post-primary-avatar img {
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+}
+
+.post-authors-names {
+	color: #333;
+	font-weight: 400;
+}
+
+.post-meta-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.post-meta-bottom svg {
+  fill: #262626;
+}
+
+.post-date {
+  color: #333;
+	font-weight: 400;
+  font-family: "cooper hewitt";
+  font-size: 0.8rem;
+}
+.post-content > * + * {
+	margin-top: 1rem;
+}
+
+.post-members {
+	text-align: center;
+	border: 1px solid #dbdbdb;
+	padding: 1.75rem;
+	margin-top: 1.5rem;
+}
+
+.post-members > * + * {
+	margin-top: 1rem;
+}
+
+.post-comments {
+
+	font-family: "cooper hewitt";
+}
+
+.post-comments-title {
+  display: flex;
+	align-items: center;
+  justify-content: center;
+	margin-left: 0.75rem;
+  padding: 2rem 0;
+}
+
+.post-share {
+	display: flex;
+	padding: 1.5rem 0;
+	justify-content: space-between;
+	margin-top: 0;
+}
+
+
+.share-icons {
+	list-style: none;
+}
+
+.share-icon {
+	display: inline-block;
+	margin-left: 0.75rem;
+  position: relative;
+}
+
+.clipboard-notification {
+  position: absolute;
+  top: -1.5em;
+  right: 0;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  display: none;
+}
+
+.clipboard-notification.visible {
+  display: block;
+}
+
+.share-icon svg {
+  fill: #333;
+	width: 20px;
+	height: 20px;
+}
+
+.share-icon svg:hover {
+	cursor: pointer;
+	fill: #636363;
+}
+
+.post-nav {
+	border-top: 1px solid #dbdbdb;
+}
+
+.post-nav .inner-wide {
+	padding: 0;
+}
+
+.post-nav-inside {
+	display: flex;
+	flex-direction: column;
+}
+
+.post-nav-inside a {
+	width: 100%;
+	display: block;
+  flex: 1 1 auto;
+}
+
+.post-nav-item {
+	flex-basis: 50%;
+	padding: 1rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.post-nav-item:hover {
+	color: #171717;
+	cursor: pointer;
+	background: #f0f0f0;
+}
+
+.post-nav-next {
+	text-align: right;
+	border-top: 1px solid #dbdbdb;
+}
+
+.nav-rubric {
+	color: #666666;
+}
+
+.nav-item-title {
+	margin-top: 0.75rem;
+	font-size: 1.5rem;
+}
+
+@media (min-width: 780px) {
+	.post-nav-inside {
+		flex-direction: row;
+	}
+
+	.post-nav-next {
+		text-align: right;
+		border-top: 0;
+		border-left: 1px solid #dbdbdb;
+	}
+}
+
+@media (min-width: 900px) {
+	.post-nav {
+		border: 0;
+	}
+
+	.post-nav-inside {
+		border-top: 1px solid #dbdbdb;
+	}
+
+  .post-nav-inside > :first-of-type:last-of-type {
+      border: 0;
+  }
+
+	.post-nav-item:hover {
+		background: transparent;
+	}
+
+	.post-nav-prev:hover {
+		padding-left: 0rem;
+    padding-right: 2rem;
+	}
+
+	.post-nav-next:hover {
+		padding-right: 0rem;
+    padding-left: 2rem;
+	}
+
+	.post-nav .inner-wide {
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
+}
+
+.post-read-more {
+  padding: 1rem 0;
+	border-top: 1px solid #dbdbdb;
+}
+
+.post-read-more .gi-title {
+	font-size: 1.3rem;
+}
+
+@media (min-width: 780px) {
+	.post-read-more .cropped.right .gi-header {
+		order: 0;
+	}
+
+	.post-read-more .cropped.right .gi-image-cropped {
+		margin: 0;
+		margin-right: 16px;
+		width: 160px;
+		height: 100px;
+	}
+
+	.post-read-more .gi-excerpt {
+		display: block;
+	}
+
+}
+
+div.truncate {
+  position: relative;
+  overflow: hidden;
+  padding-right: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+
+div.truncate:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
+}
+
+#disqus_thread {
+  display: block;
+  width: 100%;
+}
+
+#show-disqus {
+	color: #333;
+  display: inline-block;
+	margin-top: 0;
+  margin-left: 0.5rem;
+  box-shadow: none;
+  padding: 0.5rem;
+	line-height: 1.3;
+}
+
+#show-disqus:hover {
+  cursor: pointer
+}
+
+.cover {
+	position: relative;
+	font-family: "cooper hewitt";
+	border-bottom: 1px solid #dbdbdb;
+	overflow: hidden;
+}
+
+.cover:hover {
+	color: #333;
+}
+
+.full-cover {
+	position: relative;
+	height: calc(60vh - 46px);
+}
+
+.full-cover-bg {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	background-size: cover;
+	background-position: center center;
+}
+
+.full-cover-content {
+	width: 100%;
+	bottom: 0;
+	display: none;
+	position: absolute;
+	margin-bottom: 3rem;
+	pointer-events: none;
+}
+
+.post.full .post-second-header {
+	margin-top: 1rem;
+}
+
+@media (min-width: 620px) {
+	.full-cover {
+		background-color: #111;
+		height: calc(100vh - 63px);
+	}
+
+	.full-cover-bg {
+		opacity: 0.4;
+	}
+
+
+	.full-cover-content {
+		color: white;
+		display: block;
+	}
+
+	.full-cover-content .post-title {
+		font-size: 2.5rem;
+		color: inherit;
+		width: 60%;
+	}
+
+	.full-cover-content .post-excerpt {
+		color: inherit;
+		max-width: 650px;
+	}
+
+	.post.full .post-second-header .post-tag {
+		display: none;
+	}
+
+	.post.full .post-second-header .post-title {
+		display: none;
+	}
+
+	.post.full .post-second-header .post-excerpt {
+		display: none;
+	}
+}
+
+.cover.black {
+	color: white;
+	background-color: #111;
+}
+
+.cover.black .cover-bg {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.6;
+	position: absolute;
+	background-size: cover;
+	background-position: center center;
+	transition: 1s;
+}
+
+.cover.zoom:hover .cover-bg {
+    transform: scale(1.05, 1.05);
+}
+
+.cover-content {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 0.5rem 0;
+}
+
+.cover-content.start {
+	align-items: start;
+	justify-content: end;
+	flex-direction: column;
+}
+
+.cover-content.center {
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.cover.archive-header .cover-content {
+	min-height: 145px;
+}
+
+.cover.archive-header.black .cover-content {
+	min-height: 170px;
+}
+
+.cover.black .cover-content {
+}
+
+.cover.black svg {
+	fill: white;
+}
+
+.archive-title {
+	color: inherit;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.archive-content {
+    font-size: 1.1rem;
+}
+
+.archive-name > * {
+	display: inline-block;
+}
+
+.archive-rss:hover {
+	cursor: pointer
+}
+
+.archive-rss svg {
+	fill: #000;
+	width: 24px;
+  height: 24px;
+	margin-left: 0.5rem;
+}
+
+.cover.black .archive-rss svg {
+	fill: #fff;
+	width: 24px;
+  height: 24px;
+	margin-left: 0.5rem;
+}
+
+.archive-feed {
+	margin: 1rem 0;
+}
+
+.archive-feed .gi-title {
+	font-size: 1.2rem;
+}
+
+@media (min-width: 900px) {
+	.archive-feed .gi-title {
+		font-size: 1.4rem;
+	}
+
+	.archive-feed .gi-excerpt {
+		display: block;
+	}
+}
+
+.author-social {
+	list-style: none;
+}
+
+.author-social-item {
+	display: inline-block;
+	padding: 0 0.25rem;
+}
+
+.author-social-item svg {
+	height: 20px;
+	width: 20px;
+}
+
+.cover.black .author-social-item svg {
+	fill: #ffffff;
+}
+
+.author-location {
+}
+
+.author-social-item svg:hover {
+	fill: #666666;
+	cursor: pointer;
+}
+
+.archive-author {
+	width: 100%;
+	margin: 1rem 0;
+	text-align: center;
+	font-family: var(--font-sans-serif);
+}
+
+.author-meta {
+	margin-top: 1rem;
+}
+
+.author-meta > * + * {
+	margin-top: 0.5rem;
+}
+
+.author-name {
+	color: inherit;
+	font-size: 1.8rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.archive-author .author-image img {
+	max-height: 100px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.cover.black .archive-author .author-image img {
+	border: 3px solid #fff;
+}
+
+@media (min-width: 580px) {
+	.archive-author {
+		display: flex;
+	}
+
+	.author-image {
+		flex: 0 1 auto;
+		align-items: center;
+		margin-right: 1.5rem;
+	}
+
+	.author-meta {
+		text-align: left;
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 580px) {
+	.author-bio {
+		max-width: 500px;
+	}
+}
+
+.archive-menu {
+	font-family: "cooper hewitt";
+	border-bottom: 1px solid #dbdbdb;
+	padding: 0.5rem 0;
+}
+
+.cat-menu-item {
+	position: relative;
+	display: inline-block;
+	margin-right: 16px;
+	text-transform: capitalize;
+}
+
+.cat-menu-item:not(:last-of-type):before {
+	color: #666;
+	right: -13px;
+	content: "|";
+	position: absolute;
+}
+
+.archive-authors .archive-author {
+}
+
+.archive-authors {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1rem 0;
+}
+
+.archive-authors > * {
+	flex: 1 1 auto;
+}
+
+.archive-authors > *:not(:first-of-type) {
+	border-top: 1px solid #dbdbdb;
+	padding-top: 24px;
+}
+
+@media (min-width: 800px) {
+	.archive-authors > * {
+		flex-grow: 0;
+		flex-basis: 50%;
+	}
+
+	.archive-authors > *:not(:first-of-type) {
+		border-top: 0;
+		padding-top: 0;
+	}
+}
+
+.archive-tags {
+	font-family: var(--font-sans-serif);
+}
+
+.archive-tags a:hover {
+	text-decoration: none;
+}
+
+.archive-tags .cover.archive-header .cover-content {
+	min-height: 100px;
+}
+
+.archive-tags .archive-title {
+	font-size: 1.5rem;
+}
+
+.ui.button.clipboard {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.ui.button.clipboard:hover {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.banner {
+	margin-top: 0;
+	position: relative;
+	height: 280px;
+	display: table;
+	width: 100%;
+	background-color: #111;
+}
+
+.banner-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.6;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.banner-content {
+	display: table-cell;
+	width: 100%;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+	overflow: hidden;
+	position: relative;
+	padding: 2rem 0;
+}
+
+.banner .post-title {
+	color: inherit;
+	font-size: 2.8rem;
+}
+
+.banner .post-excerpt {
+	color: inherit;
+	font-size: 1.4rem;
+}
+
+@media (min-width: 550px) {
+	.banner .post-title {
+		color: inherit;
+		font-size: 3.8rem;
+	}
+}

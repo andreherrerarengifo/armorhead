@@ -1,0 +1,60 @@
+{{!< default}}
+
+{{#page}}
+  <header class="cover archive-header {{#if feature_image}}black{{else}}{{/if}}">
+  	<div class="cover-bg" style="background-image: url({{feature_image}}); ">
+  	</div>
+  	<div class="inner-wide">
+  		<div class="cover-content start">
+  			<h1 class="archive-title">{{title}}</h1>
+  			<div class="archive-content">{{content}}</div>
+  		</div>
+  	</div>
+  </header>
+
+  <div class="page-content inner-wide full-wrapper">
+    <div class="archive-authors">
+    {{#foreach authors}}
+    <div class="archive-author">
+      {{#if profile_image}}
+        <div class="author-image">
+          <img src="{{profile_image}}" alt="{{name}}" />
+        </div>
+      {{/if}}
+      <div class="author-meta">
+        <h2 class="author-name"><a class="author-name-link" href="{{url}}">{{name}}</a></h2>
+        {{#if location}}
+          <p class="author-location">
+            <span class="author-social-item">
+              {{> icons/place}}
+            </span>
+            {{location}}
+          </p>
+        {{/if}}
+        {{#if bio}}
+          <p class="author-bio">{{bio}}</p>
+        {{/if}}
+
+        <ul class="author-social">
+          {{#if facebook}}
+            <li class="author-social-item">
+              <a target="_blank" href="{{facebook_url}}">{{> icons/social/facebook}}</a>
+            </li>
+          {{/if}}
+          {{#if twitter}}
+            <li class="author-social-item">
+              <a target="_blank" href="{{twitter_url}}">{{> icons/social/twitter}}</a>
+            </li>
+          {{/if}}
+          {{#if website}}
+            <li class="author-social-item">
+              <a target="_blank" href="{{website}}">{{> icons/link}}</a>
+            </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+    {{/foreach}}
+    </div>
+  </div>
+{{/page}}

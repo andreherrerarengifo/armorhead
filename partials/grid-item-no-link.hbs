@@ -1,0 +1,26 @@
+
+<div class="post grid-item {{ class }}">
+	<div class="gi-header">
+		<img class="gi-image-cropped"
+				srcset="{{img_url feature_image size="s"}} 300w"
+				sizes="(min-width: 1170px) 300px,
+								300px"
+				src="{{img_url feature_image size="s"}}"
+				alt="{{title}}"
+		/>
+
+		<img class="gi-image"
+				srcset="{{img_url feature_image size="s"}} 300w,
+								{{img_url feature_image size="m"}} 700w"
+				sizes="(min-width: 1000px) 700px,
+								600px"
+				src="{{img_url feature_image size="s"}}"
+				alt="{{title}}"
+		/>
+	</div>
+	<div class="gi-info">
+		<h2 class="gi-title"><a class="gi-title-link" href="{{ url }}">{{title}}</a></h2>
+		<p class="gi-excerpt">{{excerpt}}</p>
+		<span class="gi-author"><a class="gi-author-link" href="{{primary_author.url}}">{{primary_author.name}}</a></span>
+	</div>
+</div>

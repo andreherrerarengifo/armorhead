@@ -1,0 +1,55 @@
+{{!< ../special-split}}
+
+{{#if @member}}
+  {{!-- Logged in: Redirect home --}}
+  <script>
+    window.location = '{{@site.url}}';
+  </script>
+{{else}}
+  {{!-- Not logged in: Signin form --}}
+  {{#page}}
+
+  <main class="site-main site-signin">
+    <div class="split"></div>
+    <div class="half">
+    <nav class="top-navigation">
+			<a class="ui button black basic" href="/">{{t "Back to homepage"}}</a>
+    </nav>
+    <div class="site-content site-signin inner">
+      <header class="page-header">
+        <h1 class="page-title">{{title}}</h1>
+        <div class="page-description">{{content}}</div>
+      </header><!-- .page-header -->
+      <div class="page-content">
+        <form data-members-form="signin" class="signin-form">
+          <div class="form-group">
+						<input data-members-email="" class="c-input subscribe-email" type="email" name="email" placeholder="{{t "Your email address"}}">
+            <button class="ui button ahred" type="submit">
+							<span class="button-content">{{t "Send login link"}}</span>
+              <span class="button-loader">{{> "icons/loader"}}</span>
+            </button>
+          </div>
+          <div class="message message-signin-success">
+						{{t "Great! Check your inbox and click the link to complete signin."}}
+          </div>
+          <div class="message message-signup-success">
+						{{t "Great! Check your inbox and click the link to confirm your subscription."}}
+          </div>
+          <div class="message message-invalid">
+						{{t "Please enter a valid email address!"}}
+          </div>
+          <div class="message message-error">
+						{{t "There was an error sending the email, please try again."}}
+          </div>
+          <div class="message message-note">
+						{{t "Don't have an account yet?"}} <a href="/signup/">{{t "Sign Up"}}</a>
+          </div>
+        </form><!-- signin-form -->
+      </div><!-- .page-content -->
+    </div><!-- .site-content -->
+    <div class="bottom"></div>
+    </div>
+
+  </main>
+  {{/page}}
+{{/if}}

@@ -1,0 +1,125 @@
+.screen-reader-text {
+  border: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+.u-cf {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rubric {
+  font-size: 0.8rem;
+  font-family: "cooper hewitt";
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.medium-zoom--opened .medium-zoom-overlay {
+  z-index: 2;
+}
+
+.medium-zoom-image--opened {
+  z-index: 2;
+}
+
+.section-error {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem;
+}
+
+.section-error header>*+* {}
+
+.section-error header {
+  font-family: var(--font-serif);
+}
+
+.error-title {
+  font-size: 4rem;
+}
+
+.error-description {
+  font-size: 2rem;
+}
+
+.error-navigation {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+	supported by Chrome, Edge, Opera and Firefox */
+}
+
+.c-input {
+  background-clip: padding-box;
+  background-color: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  color: #000;
+  display: inline-block;
+  line-height: 1.25;
+  padding: 8px 10px 4px;
+}
+
+.c-input:focus {
+  border-color: #316ecc;
+  box-shadow: 0 0 0 3px rgba(49, 131, 204, 0.25);
+  outline: 0;
+}
+
+.rss-link {
+  display: inline-block;
+}
+
+.rss-link:active svg {
+  opacity: 0.7;
+}
+
+.kg-card figcaption {
+  color: var(--color-tertiary);
+}
+
+.kg-card.kg-image-card.kg-card-hascaption {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.kg-bookmark-container:hover {
+  border-color: black;
+}
+
+.kg-bookmark-container:hover .kg-bookmark-title {
+  color: inherit !important;
+}
+
+.kg-bookmark-title {
+  font-size: 1.3rem !important;
+}
+
+@media (min-width: 550px) {
+  .kg-bookmark-title {
+    font-size: 1.5rem !important;
+  }
+}

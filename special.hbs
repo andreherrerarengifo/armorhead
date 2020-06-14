@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="{{asset "built/special.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+
+  <title>{{meta_title}}</title>
+
+  {{ghost_head}}
+  {{#page}}
+    <style>
+      .special-template .site:before {
+        background-image: url({{feature_image}});
+      }
+    </style>
+  {{/page}}
+</head>
+
+<body class="special-template">
+  <div id="page" class="site">
+      {{{body}}}
+  </div>
+
+  {{ghost_foot}}
+</body>
+
+</html>

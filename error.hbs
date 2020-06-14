@@ -1,0 +1,23 @@
+{{!< default}}
+    <div class="section-error">
+      <header class="page-header inner-wide">
+        <h1 class="error-title">{{statusCode}}</h1>
+        <div class="error-description">{{message}}</div>
+        <div class="error-navigation"><a href="/">Back to homepage</a></div>
+        {{#if errorDetails}}
+        <div class="error-details">
+          {{#foreach errorDetails}}
+            <div class="error-rule">
+            {{{rule}}}
+            {{#foreach failures}}
+              <div class="error-failure">
+                <h4>{{ref}}</h4>
+                <p>{{message}}</p>
+              </div>
+            {{/foreach}}
+            </div>
+          {{/foreach}}
+        </div>
+        {{/if}}
+      </header>
+    </div>

@@ -1,0 +1,42 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0.5rem;
+  text-align: center;
+  border-right: 1px solid var(--color-border);
+}
+
+table tr + tr {
+  border-top: 1px solid var(--color-border);
+}
+
+tr:last-of-type td {
+    border-bottom: 0;
+}
+
+tr td:last-of-type {
+    border-right: 0;
+}
+
+th {
+  font-weight: 600;
+  font-family: var(--font-sans-serif);
+  text-transform: uppercase;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+.responsive-table {
+  overflow: auto;
+}

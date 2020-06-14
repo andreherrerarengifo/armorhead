@@ -1,0 +1,267 @@
+.site-footer {
+	font-family: "cooper hewitt";
+}
+
+.footer-navigation {
+}
+
+.site-footer-bottom {
+	border-top: 1px solid var(--color-border);
+}
+
+.site-footer-inside {
+}
+
+.site-footer-top {
+	display: flex;
+	padding: 1rem 0;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	border-top: 1px solid var(--color-border);
+}
+
+.site-footer-top > * + * {
+	margin-top: 1.5rem;
+}
+
+.site-footer-branding a {
+	text-decoration: none;
+}
+
+.site-footer-branding:hover a {
+	text-decoration: none;
+}
+
+.site-footer .site-title {
+	font-size: 1.3rem;
+}
+
+@media (min-width: 900px) {
+	.site-footer-top {
+		padding: 0.75rem 0;
+		flex-direction: row;
+	}
+
+	.site-footer-top > * {
+		margin-top: 0;
+	}
+}
+
+.site-footer-branding {
+	height: 24px;
+	text-align: left;
+	display: inline-block;
+}
+
+.site-footer-branding a {
+	height: 100%;
+	display: inline-block;
+}
+
+.site-footer-branding img {
+	max-height: 100%;
+}
+
+.site-social {
+	display: flex;
+	align-items: center;
+}
+
+.social {
+	list-style: none;
+	line-height: 0;
+}
+
+.social-item {
+	margin-left: 12px;
+	display: inline-block;
+}
+
+.social-item svg {
+	height: 18px;
+	transition: fill 0.3s;
+}
+
+.social-item svg:hover {
+	fill: var(--svg-hover);
+	cursor: pointer;
+	transition: fill 0.2s;
+}
+
+.social-item.nav-facebook svg:hover {
+	fill: #3b5998;
+}
+
+.social-item.nav-twitter svg:hover {
+	fill: #1da1f2;
+}
+
+.social-item.nav-instagram svg:hover {
+	fill: #e0447b;
+}
+
+.social-item.nav-mastodon svg:hover {
+	fill: #3088d4;
+}
+
+.social-item.nav-linkedin svg:hover {
+	fill: #0073b0;
+}
+
+.social-item.nav-youtube svg:hover {
+	fill: red;
+}
+
+.social-item.nav-pinterest svg:hover {
+	fill: #e60023;
+}
+
+.social-item.nav-github svg:hover {
+	fill: #24292e;
+}
+
+.social-item.nav-reddit svg:hover {
+	fill: orangered;
+}
+
+.social-item.nav-skype svg:hover {
+	fill: #01aef3;
+}
+
+.social-item.nav-telegram svg:hover {
+	fill: #0088cc;
+}
+
+.accordion {
+	list-style: none;
+}
+
+.site-footer .accordion > * + * {
+	border-top: 1px solid #dbdbdb;
+}
+
+.accordion-items {
+	columns: auto 2;
+}
+
+.accordion-items > * + * {
+	margin-top: 0.75rem;
+}
+
+.accordion-item:hover {
+	cursor: pointer;
+}
+
+.accordion-title {
+	font-weight: normal;
+}
+
+.accordion-title a {
+	text-decoration: none;
+}
+
+.site-footer .accordion-title {
+	padding: 0.8rem 0 0.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.site-footer .accordion-title-link {
+	display: none;
+	padding: 0.8rem 0 0.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.accordion-sub {
+	display: none;
+	list-style: none;
+	columns: auto 2;
+	padding-bottom: 0.3rem;
+}
+
+.accordion-sub-item {
+	color: #333;
+	padding: 0.3rem 0;
+	font-weight: 400;
+	text-transform: capitalize;
+}
+
+.accordion-sub-item a {
+	text-decoration: none;
+}
+
+.site-watermark {
+	color: #333;
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+.site-watermark-inside {
+	padding: 0.75rem 0;
+	border-top: 1px solid #dbdbdb;
+}
+
+
+@media (min-width: 900px) {
+	.site-footer {
+		border-top: 0;
+	}
+
+	.site-footer .inner-wide:first-of-type {
+		border-bottom: 0;
+	}
+
+	.site-footer-top {
+	}
+
+	.site-footer .accordion {
+		display: flex;
+		padding: .5rem 0 1rem 0;
+		justify-content: space-between;
+	}
+
+	.site-footer .accordion-title {
+		display: none;
+		padding: 0.8rem 0 0.5rem;
+	}
+
+	.site-footer .accordion-pusher .accordion-title {
+	    display: block;
+	}
+
+	.site-footer .accordion-title-link {
+		display: block;
+		font-size: 1.3rem;
+	}
+
+	.site-footer .accordion-item {
+		border-top: 0;
+		flex: 0 1 220px;
+	}
+
+	.site-footer .accordion-pusher {
+		border-top: 0;
+    flex: 0 1 auto;
+		display: flex;
+		padding-left: 16px;
+		border-left: 1px solid var(--color-border);
+	}
+
+	.site-footer .accordion-pusher .accordion-item {
+		margin-right: 1rem;
+		flex: 0 0 auto;
+	}
+
+	.site-footer .accordion-sub {
+		columns: auto;
+		display: block;
+	}
+
+	.site-footer .accordion-sub-item {
+		padding: 0.1rem 0;
+		text-transform: capitalize;
+	}
+
+}

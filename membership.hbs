@@ -1,0 +1,87 @@
+{{!< default}}
+<div class="site-content">
+  {{#page}}
+    <div class="header-cover">
+      <header class="page-header inner">
+        <h1 class="page-title">{{title}}</h1  >
+        <div class="page-description">{{content}}</div>
+        <p class="membership-title">{{t "choose your plan"}}</p>
+      </header>
+    </div>
+    <div class="page-content">
+      <div class="membership-box inner-wide">
+        <div class="membership-plans">
+          <div class="membership-plan free">
+            <div class="membership-plan-header">
+              <h3>{{t "Free"}}</h3>
+              <div class="membership-amount"><span class="membership-amount-sign">{{@price.currency_symbol}}</span>0</div>
+            </div>
+            <div class="membership-plan-footer">
+              <a class="ui button ahblue" href="/signup/">{{t "Select"}}</a>
+            </div>
+            <div class="membership-plan-content">
+              <ul>
+                {{#get "pages" filter="tag:hash-membership-free"}}
+                  {{#if pages}}
+                    {{#foreach pages}}
+                      {{content}}
+                    {{/foreach}}
+                  {{/if}}
+                {{/get}}
+              </ul>
+            </div>
+          </div>
+          <!-- .membership-plan -->
+          <div class="membership-plan monthly">
+            <div class="membership-plan-header">
+              <h3>{{t "Monthly"}}</h3>
+              <div class="membership-amount"><span class="membership-amount-sign">{{@price.currency_symbol}}</span>{{@price.monthly}}</div>
+            </div>
+            <div class="membership-plan-footer">
+              <a class="ui button ahblue" href="/signup/">{{t "Select"}}</a>
+            </div>
+            <div class="membership-plan-content">
+              <ul>
+                {{#get "pages" filter="tag:hash-membership-monthly"}}
+                  {{#if pages}}
+                    {{#foreach pages}}
+                      {{content}}
+                    {{/foreach}}
+                  {{/if}}
+                {{/get}}
+              </ul>
+            </div>
+          </div>
+          <!-- .membership-plan -->
+          <div class="membership-plan yearly">
+            <div class="membership-plan-header">
+              <h3>{{t "Yearly"}}</h3>
+              <div class="membership-amount"><span class="membership-amount-sign">{{@price.currency_symbol}}</span>{{@price.yearly}}</div>
+            </div>
+            <div class="membership-plan-footer">
+              <a class="ui button ahblue" href="/signup/">{{t "Select"}}</a>
+            </div>
+            <div class="membership-plan-content">
+              <ul>
+                {{#get "pages" filter="tag:hash-membership-yearly"}}
+                  {{#if pages}}
+                    {{#foreach pages}}
+                      {{content}}
+                    {{/foreach}}
+                  {{/if}}
+                {{/get}}
+              </ul>
+            </div>
+          </div>
+          <!-- .membership-plan -->
+        </div>
+        <!-- membership-plans -->
+        <div class="membership-contact">
+          <div class="inner">
+            <p>{{t "You can cancel at any time. For help please contact"}} <a href="mailto:{{meta_description}}">{{meta_description}}</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/page}}
+</div>

@@ -1,0 +1,121 @@
+<style>
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0.6;
+    }
+  }
+
+  @-webkit-keyframes fadeInFull {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInFull {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeInDown {
+    from {
+      opacity: 0;
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+  .site-date span {
+    animation-delay: 0.75s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+  }
+
+  .rss-action,
+  .search-action {
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+  }
+
+  .grid-item {
+    animation-delay: .3s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInFull;
+  }
+
+  .special-split-template .split {
+    animation-delay: .5s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+  }
+
+  .banner-background {
+    animation-delay: .5s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+  }
+
+  @media (min-width: 550px) {
+    .full-cover-bg {
+      animation-delay: .5s;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      animation-name: fadeIn;
+    }
+  }
+
+  .cover.black .cover-bg {
+    animation-delay: .5s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+  }
+</style>

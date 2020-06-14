@@ -1,0 +1,139 @@
+{{!< default}}
+<div class="site-content">
+	<div class="grid tgrid separator">
+
+		<div class="grid-section tcenter">
+			{{#get "posts" filter="featured:true+tag:hash-top-center" limit="1" include="authors"}}
+				{{#foreach posts visibility="all"}}
+					{{> "grid-item-not-cropped"}}
+				{{/foreach}}
+			{{/get}}
+		</div>
+		<!--.grid-section-->
+
+		<div class="grid-section tright">
+			{{#get "posts" limit="4" filter="tag:hash-top-right"  include="authors"}}
+				{{#foreach posts visibility="all"}}
+					{{> "grid-item-cropped-small" class="cropped right"}}
+				{{/foreach}}
+			{{/get}}
+		</div>
+		<!--.grid-section-->
+
+		<div class="grid-section tleft">
+			{{#get "posts" limit="2" filter="tag:hash-top-left" include="authors"}}
+				{{#foreach posts visibility="all"}}
+					{{> "grid-item-not-cropped"}}
+				{{/foreach}}
+			{{/get}}
+		</div>
+		<!--.grid-section-->
+
+		{{#get "posts" limit="4" filter="tag:hash-top-middle" include="authors"}}
+			{{#if posts}}
+				<div class="grid-section tmiddle">
+					{{#foreach posts visibility="all"}}
+						{{> "grid-item" class="cropped right"}}
+					{{/foreach}}
+				</div>
+			{{/if}}
+		{{/get}}
+		<!--.grid-section-->
+
+		{{#get "posts" limit="2" filter="tag:hash-top-bottom-left" include="authors"}}
+			{{#if posts}}
+				<div class="grid-section tbottom">
+					<div class="tbottom-one">
+						{{#foreach posts visibility="all"}}
+							{{> "grid-item"}}
+						{{/foreach}}
+					</div>
+
+					{{#get "posts" limit="1" filter="tag:hash-top-bottom-right" include="authors"}}
+						{{#if posts}}
+							<div class="tbottom-two">
+								{{#foreach posts visibility="all"}}
+									{{> "grid-item"}}
+								{{/foreach}}
+							</div>
+						{{/if}}
+					{{/get}}
+
+				</div>
+				<!--.grid-section-->
+			{{/if}}
+		{{/get}}
+</div>
+<!--.tgrid-->
+
+<div class="grid bgrid">
+
+	{{#get "posts" limit="5" filter="tag:hash-more"  include="authors"}}
+		{{#if posts}}
+			<div class="bgrid-left">
+				<div class="grid-section tmore title">
+					<h2 class="gs-title">{{t "Read More"}}</h2>
+					{{#foreach posts visibility="all"}}
+						{{> "grid-item-cropped" class="cropped big"}}
+					{{/foreach}}
+				</div>
+				<!--.grid-section-->
+				<div class="read-more">
+					<a href="/global" class="ui button black">{{t "Read More"}}</a>
+				</div>
+			</div>
+		{{/if}}
+	{{/get}}
+
+	<div class="bgrid-right">
+
+		{{#get "pages" filter="tag:hash-home-newsletter"}}
+			{{#if pages}}
+				{{#foreach pages}}
+					<div class="grid-section tnewsletter title">
+						<h2 class="gs-title">{{title}}</h2>
+						<div class="grid-item">
+							<form data-members-form="subscribe" class="signup-form">
+								<div class="form-group">
+									<div class="form-text">{{content}}</div>
+									<input data-members-email="" class="c-input subscribe-email" type="email" name="email" placeholder="Your email address">
+									<button class="ui button black" type="submit">
+										<span class="button-content">{{t "Subscribe"}}</span>
+										<span class="button-loader">{{> "icons/loader"}}</span>
+									</button>
+								</div>
+								<div class="message message-signin-success">
+									{{t "Great! Check your inbox and click the link to complete signin."}}
+								</div>
+								<div class="message message-signup-success">
+									{{t "Great! Check your inbox and click the link to confirm your subscription."}}
+								</div>
+								<div class="message message-invalid">
+									{{t "Please enter a valid email address!"}}
+								</div>
+								<div class="message message-error">
+									{{t "There was an error sending the email, please try again."}}
+								</div>
+							</form><!-- signin-form -->
+						</div>
+					</div>
+				{{/foreach}}
+			{{/if}}
+		{{/get}}
+
+		{{#get "pages" filter="tag:hash-home-widget" include="tags" order="published_at asc"}}
+			{{#if pages}}
+				{{#foreach pages}}
+					<div class="grid-section title {{#foreach tags visibility="internal"}} {{slug}}{{/foreach}}">
+						<h2 class="gs-title">{{title}}</h2>
+						<div class="">{{content}}</div>
+					</div>
+				{{/foreach}}
+			{{/if}}
+		{{/get}}
+	</div>
+
+</div>
+<!--.bgrid-->
+</div>
+<!--.site-content-->

@@ -1,0 +1,41 @@
+{{!< default}}
+
+<div class="">
+  {{#page}}
+    <header class="cover archive-header {{#if feature_image}}black{{else}}{{/if}}">
+      {{#if feature_image}}
+        <div class="cover-bg" style="background-image: url({{feature_image}}); "></div>
+      {{else}}
+        <div class="cover-bg"></div>
+      {{/if}}
+      <div class="inner-wide">
+        <div class="cover-content center">
+          <h1 class="archive-title">Tags</h1>
+          <div class="archive-content">{{content}}</div>
+        </div>
+      </div>
+    </header>
+    <div class="archive-tags">
+      {{#if tags}}
+        {{#foreach tags}}
+          <a class="archive-tags-link" href="{{url}}">
+            <header class="cover archive-header zoom {{#if feature_image}}black{{else}}{{/if}}">
+              {{#if feature_image}}
+                <div class="cover-bg" style="background-image: url({{feature_image}}); "></div>
+              {{else}}
+                <div class="cover-bg"></div>
+              {{/if}}
+              <div class="inner-wide">
+                <div class="cover-content">
+                  <h1 class="archive-title">{{name}}</h1>
+                </div>
+              </div>
+            </header>
+          </a>
+        {{/foreach}}
+      {{else}}
+        No tags
+      {{/if}}
+    </div>
+  {{/page}}
+</div>

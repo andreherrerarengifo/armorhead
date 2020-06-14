@@ -1,0 +1,54 @@
+{{!< default}}
+
+{{#post}}
+	<article class="post {{post_class}}">
+		<header class="post-header banner">
+			<div class="banner-background" style="background-image: url({{feature_image}})"></div>
+			<div class="banner-content">
+				<div class="inner">
+				<h1 class="post-title">
+					{{title}}
+				</h1>
+				<div class="post-excerpt">
+		      {{#if custom_excerpt}}
+		        {{custom_excerpt}}
+		      {{/if}}
+				</div>
+			</div>
+			</div>
+		</header>
+
+		<div class="post-content inner">
+			{{#if access}}
+				{{content}}
+			{{else}}
+				<div class="truncate">
+					{{excerpt}}
+				</div>
+				{{#has visibility="paid"}}
+					<div class="post-members">
+						<h1>This post is for paying subscribers only</h1>
+						<p>Sign up now and upgrade your account to read the post and get access to the full library of posts for paying subscribers only.</p>
+						<div class="post-members-action">
+							<button class="ui button ahred">Sign Up</button>
+						</div>
+						<p>Already have an account? <a href="/signin">Sign in</a></p>
+					</div>
+			{{else}}
+				<div class="post-members">
+					<h1>This post is for subscribers only</h1>
+					<p>Sign up now to read the post and get access to the full library of posts for subscribers only.</p>
+					<div class="post-members-action">
+						<button class="ui button ahred">Sign Up</button>
+					</div>
+					<p>Already have an account? <a href="/signin">Sign in</a></p>
+				</div>
+				{{/has}}
+			{{/if}}
+		</div>
+
+		<footer class="post-footer">
+		</footer>
+	</article>
+
+{{/post}}

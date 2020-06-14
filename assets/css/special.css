@@ -1,0 +1,127 @@
+@import "vars.css";
+@import "animations.css";
+
+.special-template {
+  min-height: 100vh;
+}
+
+.special-template .site {
+  color: #fff;
+  background-color: #111;
+  justify-content: center;
+}
+
+.special-template .site:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .4;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.special-template .site-main {
+  flex: 0 0 auto;
+}
+
+.special-template .site-content {
+  position: relative;
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.special-template .top-navigation {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 30px;
+  position: absolute;
+  text-align: center;
+}
+
+.special-template .page-title {}
+
+.special-template .subscribe-email {
+  color: #fff;
+  border-color: #fff;
+  background-color: transparent;
+}
+
+.special-split-template {
+  min-height: 100vh;
+}
+
+.special-split-template .site {
+  justify-content: center;
+}
+
+.special-split-template .site-main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+}
+
+.special-split-template .split {
+  background-color: #111;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.special-split-template .half {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.special-split-template .half .bottom {
+  height: 15%
+}
+
+@media (min-width: 780px) {
+  .special-split-template .split {
+    flex: 1 0 40%;
+  }
+}
+
+.special-split-template .site-content {
+  position: relative;
+  text-align: center;
+  min-width: 75%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-family: var(--font-sans-serif);
+}
+
+.special-split-template .top-navigation {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.special-split-template .page-title {
+  font-size: 2.5rem;
+}
+
+.special-split-template .page-description {}
+
+.special-split-template .form-group {
+  flex-direction: column;
+}
+
+.special-split-template .subscribe-email {
+  background-color: transparent;
+}
+
+.special-split-template form[data-members-form] .button {
+  margin-left: 0;
+  margin-top: 1rem;
+  align-self: center;
+}

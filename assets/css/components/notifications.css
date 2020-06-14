@@ -1,0 +1,105 @@
+
+.notification {
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #000;
+  z-index: 9999;
+  position: fixed;
+  background: #fff;
+  line-height: 1.5;
+  text-align: center;
+  visibility: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-sans-serif);
+  padding: 1rem 0 0.8rem 0;
+  transform: translateY(-150%);
+  border-bottom: 1px solid var(--color-border);
+  transition: transform .35s ease-in-out .5s, visibility .35s ease-in-out .5s;
+}
+
+@media (min-width: 620px) {
+  .notification {
+    font-size: 1.2rem;
+    padding: 1.4rem 0 1.2rem 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .home-template .notification {
+    font-size: 1.3rem;
+    padding: 46px 0;
+  }
+}
+
+
+.notification .notification-close {
+  top: 50%;
+  right: 3%;
+  width: 1rem;
+  height: 30px;
+  border: 0;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.notification .icon-close {
+  width: 24px;
+}
+
+.subscribe-success .notification-subscribe,
+.signup-success .notification-signup,
+.signin-success .notification-signin,
+.checkout-success .notification-checkout {
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.subscribe-success .notification-subscribe.closed,
+.signup-success .notification-signup.closed,
+.signin-success .notification-signin.closed,
+.checkout-success .notification-checkout.closed {
+  transform: translateY(-150%);
+  visibility: hidden;
+}
+
+
+.icon-nav,
+.icon-close {
+  background: currentColor;
+  color: inherit;
+  height: 2px;
+  left: 50%;
+  margin-left: -12px;
+  margin-top: -1px;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+}
+
+.icon-close:before,
+.icon-close:after {
+  background: currentColor;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  width: 100%;
+}
+
+.icon-close {
+  background: 0;
+}
+
+.icon-close:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.icon-close:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}

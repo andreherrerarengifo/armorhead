@@ -1,0 +1,33 @@
+{{!< default}}
+<header class="cover archive-header {{#if @site.cover_image}}black{{else}}{{/if}}">
+  {{#if @site.cover_image}}
+    <div class="cover-bg" style="background-image: url({{@site.cover_image}}); "></div>
+  {{else}}
+    <div class="cover-bg"></div>
+  {{/if}}
+
+  <div class="inner-wide">
+    <div class="cover-content">
+      <div>
+        <h1 class="archive-title">{{@site.title}}</h1>
+        <p class="archive-content">
+          {{#if @site.description}}
+            {{@site.description}}
+          {{/if}}
+        </p>
+      </div>
+      <div class="archive-rss">
+        <a href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/">
+          {{> icons/rss}}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="site-content site-content-padding-top">
+  <div class="post-feed  inner-wide">
+    {{#foreach posts visibility="all"}}
+      {{> "grid-item-cropped" class="cropped left big"}}
+    {{/foreach}}
+  </div>
+</div>

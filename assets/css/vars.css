@@ -1,0 +1,24 @@
+:root {
+  --svg-hover: #606060;
+
+  --color-primary: #1f70c1;
+  --color-secondary: #333;
+  --color-tertiary: #5e6a74;
+
+  --color-border: #dbdbdb;
+
+  --color-bg-code: #f0f0f0;
+
+  --color-success: #0e570e;
+  --color-error: #912c2c;
+
+  --color-button: #1f70c1;
+  --color-button-hover: #185899;
+  --color-button-border: #1f70c1;
+
+  --font-sans-serif: "cooper hewitt", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-serif: "charter", Georgia, Times, serif;
+  --font-mono: "fira-mono", Menlo, Courier, monospace;
+
+  --radius: 3px;
+}

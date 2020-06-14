@@ -1,0 +1,191 @@
+.sidebar,
+.search {
+	top: 0;
+	left: 0;
+	right: 0;
+	max-width: 550px;
+	bottom: 0;
+	opacity: 0;
+	z-index: 299;
+	position: fixed;
+	background: white;
+	font-family: "cooper hewitt";
+	pointer-events: none;
+	transform: translateX(-50%);
+	transition: opacity .2s cubic-bezier(.2,0,.4,1),transform .2s cubic-bezier(.2,0,.4,1);
+	overflow: auto;
+}
+
+.sidebar-opened,
+.search-opened {
+	overflow: hidden;
+}
+
+.search-opened .search,
+.sidebar-opened .sidebar {
+	transform: translateX(0);
+	opacity: 1;
+	pointer-events: all;
+}
+
+.overlay {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+	background: #000;
+	opacity: 0.4;
+	display: none;
+	z-index: 200;
+}
+
+.sidebar-opened .overlay,
+.search-opened .overlay {
+	display: block;
+}
+
+.sidebar .header,
+.search .header {
+	height: 52px;
+	display: flex;
+	align-items: center;
+	border-top: 3px solid black;
+	justify-content: space-between;
+}
+
+.search .header {
+	border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar .header .logo {
+  height: 60%;
+  display: inline-block;
+}
+
+.sidebar .header .logo img {
+  height: 100%;
+}
+
+.sidebar .header svg {
+  fill: #fff;
+  stroke: #111;
+}
+
+.sidebar .header svg:hover {
+  stroke: var(--svg-hover);
+}
+
+.ss .widget-area {
+  margin-bottom: 2rem;
+}
+
+.ss .widget {
+  overflow: auto;
+  padding: 0 0.75rem;
+  border-top: 1px solid #dbdbdb;
+  padding-bottom: 1rem;
+}
+
+.ss .widget-title {
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 1.5rem 0 1rem;
+}
+
+.ss .widget.hash-no-title .widget-title {
+	display: none;
+}
+
+.ss .widget-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ss .widget-form .form-group>*+* {
+  margin-top: 1rem;
+}
+
+.ss .widget-contact .contact {
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.ss .widget-contact .contact-item svg {
+  fill: #333;
+  height: 1em;
+  margin-right: 0.25rem;
+}
+
+.ss .widget-contact .contact>*+* {
+  margin-top: 1rem;
+}
+
+.ss .widget-navigation .menu-item {
+	padding: 0;
+	display: block;
+}
+
+.menu-item a {
+	text-decoration: none;
+}
+
+.ss .widget-nav > * + * {
+	margin-top: .75rem;
+}
+
+
+@media (min-width: 620px) {
+  .sidebar .inner-wide {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+.search svg {
+  fill: #fff;
+  stroke: #111;
+}
+
+.search svg:hover {
+  stroke: var(--svg-hover);
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+}
+
+#ghost-search-field {
+  flex: 1 0 auto;
+  border: 0;
+  padding: 0.25rem .5rem 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.ghost-results>* {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.ghost-result:hover {
+  color: #171717;
+  cursor: pointer;
+}
+
+.ghost-result:active {
+  background: #f0f0f0;
+}
+
+.ghost-result-title {
+	font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.ghost-result-date {
+  font-size: 0.8rem;
+	margin-top: 0.15rem;
+}

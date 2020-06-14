@@ -1,0 +1,254 @@
+<style>
+
+  .archive-title {
+    color: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .cover.black svg {
+    fill: white;
+  }
+
+  .grid-item {
+    position: relative;
+    margin-bottom: 32px;
+  }
+
+  .grid-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .grid-item:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: -16px;
+    border-bottom: 1px solid #dbdbdb;
+  }
+
+  .grid-item:last-child:after {
+    border: 0;
+  }
+
+  .gi-image-link {
+    display: block;
+  }
+
+  .gi-image-cropped {
+    display: none;
+    min-width: 70px;
+    min-height: 70px;
+    color: #fff;
+    font-size: 1.1rem;
+    overflow: hidden;
+    font-family: "cooper hewitt";
+    width: 70px;
+    height: 70px;
+    margin-top: 4px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    background-size: cover;
+    background-position: 50%;
+    background-color: #dfdfdf;
+  }
+
+  .gi-title-link {
+    text-decoration: none;
+  }
+
+  .gi-excerpt {
+    color: #666;
+    margin-top: .5rem;
+  }
+
+  .gi-author {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: .75rem;
+    font-family: cooper hewitt;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .gi-info {
+    flex: 1 1 auto;
+  }
+
+  .gi-title {
+    font-weight: 400;
+  }
+
+  .post-feed .gi-title {
+      font-size: 1.3rem;
+  }
+
+  .cropped {
+    display: flex;
+  }
+
+  .cropped .gi-image-cropped {
+    display: block;
+    margin-right: 16px;
+  }
+
+  .cropped.big .gi-image-cropped {
+    min-width: 160px;
+    min-height: 100px;
+    width: 160px;
+    height: 100px;
+    background-color: #dfdfdf;
+    font-family: cooper hewitt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 4rem;
+    overflow: hidden;
+  }
+
+  .cropped .gi-image {
+    display: none;
+  }
+
+  .cropped .gi-info {
+    flex: 1 1 auto;
+  }
+
+  .cropped .gi-excerpt {
+    display: none;
+  }
+
+  .cover {
+    position: relative;
+    font-family: "cooper hewitt";
+    border-bottom: 1px solid #dbdbdb;
+    overflow: hidden;
+  }
+
+  .cover:hover {
+    color: #333;
+  }
+
+  .full-cover {
+    position: relative;
+    height: calc(60vh - 46px);
+  }
+
+  .full-cover-bg {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .full-cover-content {
+    width: 100%;
+    bottom: 0;
+    display: none;
+    position: absolute;
+    margin-bottom: 3rem;
+    pointer-events: none;
+  }
+
+  .post.full .post-second-header {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 620px) {
+    .full-cover {
+      background-color: #111;
+      height: calc(100vh - 63px);
+    }
+
+    .full-cover-bg {
+      opacity: 0.4;
+    }
+
+
+    .full-cover-content {
+      color: white;
+      display: block;
+    }
+
+    .full-cover-content .post-title {
+      font-size: 2.5rem;
+      color: inherit;
+      width: 60%;
+    }
+
+    .full-cover-content .post-excerpt {
+      color: inherit;
+      max-width: 650px;
+    }
+
+    .post.full .post-second-header .post-tag {
+      display: none;
+    }
+
+    .post.full .post-second-header .post-title {
+      display: none;
+    }
+
+    .post.full .post-second-header .post-excerpt {
+      display: none;
+    }
+  }
+
+  .cover.black {
+    color: white;
+    background-color: #111;
+  }
+
+  .cover.black .cover-bg {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    transition: 1s;
+  }
+
+  .cover.zoom:hover .cover-bg {
+    transform: scale(1.05, 1.05);
+  }
+
+  .cover-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0.5rem 0;
+  }
+
+  .cover-content.start {
+    align-items: start;
+    justify-content: end;
+    flex-direction: column;
+  }
+
+  .cover-content.center {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .cover.archive-header .cover-content {
+    min-height: 145px;
+  }
+
+  .cover.archive-header.black .cover-content {
+    min-height: 170px;
+  }
+
+  .cover.black .cover-content {}
+</style>

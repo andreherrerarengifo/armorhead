@@ -1,0 +1,52 @@
+routes:
+  /:
+    template: home
+
+  /membership/:
+    data: page.membership
+    template: membership
+
+  /newsletter/:
+    data: page.newsletter
+    template: newsletter
+
+  /contact/:
+    data: page.contact
+    template: contact
+
+  /signup/:
+    data: page.signup
+    template: members/signup
+
+  /signin/: 
+    data: page.signin
+    template: members/signin
+
+  /account/: members/account
+
+  /authors/:
+    data: page.authors
+    template: authors
+
+  /tags/:
+    data: page.tags
+    template: tags
+
+  /channels/:
+    data: page.channels
+    template: channels
+
+  /starter/:
+    data: page.starter
+    controller: channel
+    template: channel
+    filter: tag:[getting-started]
+
+collections:
+  /global/:
+    permalink: /global/{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

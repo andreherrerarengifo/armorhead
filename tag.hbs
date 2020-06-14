@@ -1,0 +1,43 @@
+{{!< default}}
+
+{{#tag}}
+  <header class="cover archive-header {{#if feature_image}}black{{else}}{{/if}}">
+    {{#if feature_image}}
+      <div class="cover-bg" style="background-image: url({{feature_image}}); ">
+    {{else}}
+      <div class="cover-bg">
+    {{/if}}
+    </div>
+    <div class="inner-wide">
+      <div class="cover-content">
+        <div>
+          <div class="archive-name">
+            <h1 class="archive-title">{{name}}</h1>
+            <div class="archive-rss">
+              <a target="_blank" href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/">
+                {{> icons/rss-full}}
+              </a>
+            </div>
+          </div>
+          <p class="archive-content">
+            {{#if description}}
+              {{description}}
+            {{/if}}
+          </p>
+        </div>
+        <div class="archive-meta">
+          <div class="archive-count">
+            {{plural ../pagination.total empty='no posts' singular='% post' plural='% posts'}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{{/tag}}
+<div class="inner-wide full-wrapper">
+  <div class="archive-feed post-feed">
+    {{#foreach posts visibility="all"}}
+      {{> "grid-item-cropped" class="cropped left big"}}
+    {{/foreach}}
+  </div>
+</div>

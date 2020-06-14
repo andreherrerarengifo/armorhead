@@ -1,0 +1,166 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: normal;
+  background: #fff;
+}
+
+p,
+ul,
+ol,
+li,
+dl,
+dd,
+hr,
+pre,
+form,
+table,
+video,
+figure,
+figcaption,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+hr {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid currentcolor;
+  opacity: 0.2;
+  margin: 1rem 0;
+}
+
+::selection {
+}
+
+mark {
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+  padding: 0;
+  color: inherit;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+@media (min-width: 550px) { h1 { font-size: 2rem;; } }
+@media (min-width: 650px) { h1 { font-size: 2.4rem;; } }
+
+h2 {
+  font-size: 1.6rem;
+}
+@media (min-width: 550px) { h2 { font-size: 1.9rem; } }
+@media (min-width: 650px) { h2 { font-size: 2.2rem; } }
+
+h3 {
+  font-size: 1.4rem;
+}
+@media (min-width: 550px) { h3 { font-size: 1.6rem; } }
+@media (min-width: 650px) { h3 { font-size: 1.85rem; } }
+
+h4 {
+  font-size: 1.25rem;
+}
+@media (min-width: 550px) { h4 { font-size: 1.4rem; } }
+@media (min-width: 650px) { h4 { font-size: 1.6rem; } }
+
+h5 {
+  font-size: 1.2rem;
+}
+@media (min-width: 550px) { h5 { font-size: 1.3rem; } }
+@media (min-width: 650px) { h5 { font-size: 1.5rem; } }
+
+h6 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--color-border);
+}
+@media (min-width: 550px) { h6 { font-size: 1.6rem; } }
+@media (min-width: 650px) { h6 { font-size: 1.85rem; } }
+
+input:focus, textarea:focus, select:focus{
+	outline: none;
+}

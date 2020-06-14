@@ -1,0 +1,7 @@
+{{#foreach authors}}
+  {{#if @first}}{{t "By"}}
+    <a class="authors-names-link" href="{{url}}">{{name}}</a>
+  {{else}}
+    , <a class="authors-names-link" href="{{url}}">{{name}}</a>
+  {{/if}}
+{{/foreach}}

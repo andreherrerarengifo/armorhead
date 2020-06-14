@@ -1,0 +1,98 @@
+<header class="site-header">
+  <div class="inner-wide">
+    <div class="site-header-inside">
+      <div class="site-header-top">
+
+        <div class="site-actions">
+          <ul class="actions">
+            <li class="actions-item">
+              <button id="menu-show">
+                {{> icons/menu}}
+              </button>
+            </li>
+            <li class="actions-item search-action">
+              <button id="search-show">
+                {{> icons/search}}
+              </button>
+            </li>
+            <li class="actions-item rss-action">
+              <a class="rss" href="/global/">
+              {{> icons/rss}}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="site-branding">
+          <a href="/">
+          {{#if @site.logo}}
+            <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+          {{/if}}
+          </a>
+        </div>
+
+        {{#if @labs.members}}
+        <div class="site-users">
+          <ul class="users">
+            <li class="users-item mobile">
+              <button id="users-show">
+                {{> icons/users}}
+              </button>
+              <div class="users-submenu">
+                {{#if @member}}
+                  <a class="menu-item" href="{{@site.url}}/account/">{{t "Account"}}</a>
+                  <a class="menu-item" href="#signout" data-members-signout>{{t "Log out"}}</a>
+                {{else}}
+                  <a class="menu-item" href="{{@site.url}}/signin/">{{t "Sign In"}}</a>
+                  <a class="menu-item" href="{{@site.url}}/signup/">{{t "Sign Up"}}</a>
+                {{/if}}
+              </div>
+            </li>
+
+            {{#if @member}}
+              <li class="users-item desktop">
+                <a href="{{@site.url}}/account/">{{t "Account"}}</a>
+              </li>
+              <li class="users-item desktop">
+                <a href="#signout" data-members-signout><div class="ui button ahred">{{t "Log Out"}}</div></a>
+              </li>
+            {{else}}
+              <li class="users-item desktop">
+                <a href="{{@site.url}}/signin">{{t "Sign In"}}</a>
+              </li>
+              <li class="users-item desktop">
+                <a href="{{@site.url}}/signup"><div class="ui button ahred">{{t "Sign Up"}}</div></a>
+              </li>
+            {{/if}}
+          </ul>
+        </div>
+        {{/if}}
+
+        <div class="site-date">
+          <span></span>
+        </div>
+
+      </div>
+      <!--.site-header-top-->
+
+      <div class="site-header-bottom">
+        <div class="site-navigation">
+          <ul class="menu">
+            {{#get "pages" filter="tag:hash-main-menu" order="published_at asc"}}
+              {{#if pages}}
+                {{#foreach pages visibility="all"}}
+                  <li class="menu-item"><a href="{{url}}">{{title}}</a></li>
+                {{/foreach}}
+              {{/if}}
+            {{/get}}
+            {{ navigation }}
+          </ul>
+        </div>
+      </div>
+      <!--.site-header-top-->
+    </div>
+    <!--.site-header-inside-->
+  </div>
+  <!--.inner-wide-->
+</header>
+<!--.site-header-->

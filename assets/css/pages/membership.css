@@ -1,0 +1,92 @@
+.membership-box {
+  max-width: 1100px;
+  font-family: var(--font-sans-serif);
+}
+
+.membership-title {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.membership-plans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -15px;
+}
+
+.membership-plan {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  flex: 1 0 240px;
+  display: flex;
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.membership-plan:hover {
+  border: 1px solid var(--color-button);
+}
+
+.membership-plan:hover .button {
+}
+
+.membership-plan-header {
+}
+
+.membership-plan-header h3 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+.membership-plan-header small {
+    line-height: 1.2;
+}
+
+.membership-amount {
+  font-size: 3rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.membership-amount-sign {
+    font-size: 1.5rem;
+}
+
+.membership-plan-content {
+  flex-grow: 1;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.membership-plan-content ul,
+.membership-plan-content ol {
+  list-style: none;
+  padding: 0;
+}
+
+.membership-plan-content li {
+  margin-top: 0.25rem;
+}
+
+.membership-plan-footer .button {
+  display: block;
+}
+
+.membership-contact {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (min-width: 550px) {
+  .membership-plan {
+    max-width: 320px;
+  }
+}

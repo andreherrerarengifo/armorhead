@@ -1,0 +1,22 @@
+<aside class="post-nav">
+  <div class="inner-wide">
+    <div class="post-nav-inside">
+      {{#prev_post}}
+        <a class="post-nav-item post-nav-prev" href="{{url}}">
+          <div class="nav-rubric rubric">{{t "Previous Post"}}</div>
+          <div class="nav-item-title">
+            {{title}}
+          </div>
+        </a>
+      {{/prev_post}}
+      {{#next_post}}
+        <a class="post-nav-item post-nav-next" href="{{url}}">
+          <div class="nav-rubric rubric">{{t "Next Post"}}</div>
+          <div class="nav-item-title">
+            {{title}}
+          </div>
+        </a>
+      {{/next_post}}
+    </div>
+  </div>
+</aside>

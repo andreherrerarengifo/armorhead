@@ -1,0 +1,93 @@
+{{!< default}}
+
+{{#post}}
+	<article class="post {{post_class}}">
+		<header class="post-header inner">
+			<div class="post-tag">
+				{{#if primary_tag}}
+					<a class="post-tag-link" href="{{primary_tag.url}}">
+						{{primary_tag.name}}
+					</a>
+				{{/if}}
+			</div>
+			<h1 class="post-title">
+				{{title}}
+			</h1>
+			<div class="post-excerpt">
+				{{#if custom_excerpt}}
+					{{custom_excerpt}}
+				{{/if}}
+			</div>
+			{{#if feature_image}}
+				<figure class="kg-width-wide">
+					<img class="post-image" src="{{feature_image}}" alt="{{title}}" />
+				</figure>
+			{{/if}}
+			<div class="meta">
+				{{> post-authors}}
+				<div class="post-meta-bottom">
+					<div class="post-date">{{date format="MMMM DD, YYYY, h:m a"}}</div>
+					<div class="post-share-icons">
+						{{> share-icons}}
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="post-content inner">
+
+
+			{{#if access}}
+				{{content}}
+			{{else}}
+				<div class="truncate">
+					{{excerpt}}
+				</div>
+				{{#has visibility="paid"}}
+					<div class="post-members">
+						<h1>This post is for paying subscribers only</h1>
+						<p>Sign up now and upgrade your account to read the post and get access to the full library of posts for paying subscribers only.</p>
+						<div class="post-members-action">
+							<button class="ui button ahred">Sign Up</button>
+						</div>
+						<p>Already have an account? <a href="/signin">Sign in</a></p>
+					</div>
+			{{else}}
+				<div class="post-members">
+					<h1>This post is for subscribers only</h1>
+					<p>Sign up now to read the post and get access to the full library of posts for subscribers only.</p>
+					<div class="post-members-action">
+						<button class="ui button ahred">Sign Up</button>
+					</div>
+					<p>Already have an account? <a href="/signin">Sign in</a></p>
+				</div>
+				{{/has}}
+			{{/if}}
+
+			<div class="post-comments">
+				{{> disqus }}
+			</div>
+
+			{{> post-share}}
+
+		</div>
+
+		<footer class="post-footer">
+		</footer>
+	</article>
+
+	{{> post-nav}}
+
+	{{#get "posts" limit="4" filter="tags:[{{tags[*].slug}}]+id:-{{comment_id}}" include="tags"}}
+		{{#if posts}}
+			<div class="inner-wide full-wrapper">
+				<aside class="post-read-more">
+					{{#foreach posts visibility="all"}}
+						{{> "grid-item" class="cropped left big"}}
+					{{/foreach}}
+				</aside>
+			</div>
+		{{/if}}
+	{{/get}}
+
+{{/post}}

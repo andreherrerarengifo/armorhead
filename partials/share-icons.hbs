@@ -1,0 +1,23 @@
+<ul class="share-icons">
+  <li class="share-icon">
+    <a title="Twitter" class="twitter" href="https://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      {{> icons/social/twitter }}
+    </a>
+  </li>
+  <li class="share-icon">
+    <a title="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      {{> icons/social/facebook }}
+    </a>
+  </li>
+  <li class="share-icon">
+    <a title="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+      {{> icons/social/linkedin }}
+    </a>
+  </li>
+  <li class="share-icon">
+    <div class="clipboard-notification">copied to clipboard!</div>
+    <button class="btn ui button basic clipboard" data-clipboard-text="{{url absolute="true"}}">
+    {{> icons/link }}
+    </button>
+  </li>
+</ul>
