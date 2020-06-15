@@ -121,16 +121,18 @@
 			{{/if}}
 		{{/get}}
 
-		{{#get "pages" filter="tag:hash-home-widget" include="tags" order="published_at asc"}}
-			{{#if pages}}
-				{{#foreach pages}}
-					<div class="grid-section title {{#foreach tags visibility="internal"}} {{slug}}{{/foreach}}">
-						<h2 class="gs-title">{{title}}</h2>
-						<div class="">{{content}}</div>
-					</div>
-				{{/foreach}}
-			{{/if}}
-		{{/get}}
+		{{^if member}}
+			{{#get "pages" filter="tag:hash-home-widget" include="tags" order="published_at asc"}}
+				{{#if pages}}
+					{{#foreach pages}}
+						<div class="grid-section title {{#foreach tags visibility="internal"}} {{slug}}{{/foreach}}">
+							<h2 class="gs-title">{{title}}</h2>
+							<div class="">{{content}}</div>
+						</div>
+					{{/foreach}}
+				{{/if}}
+			{{/get}}
+		{{/if}}
 	</div>
 
 </div>

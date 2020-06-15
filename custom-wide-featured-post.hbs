@@ -77,17 +77,6 @@
 	</article>
 
 	{{> post-nav}}
-
-	{{#get "posts" limit="4" filter="tags:[{{tags[*].slug}}]+id:-{{comment_id}}" include="tags"}}
-		{{#if posts}}
-			<div class="inner-wide full-wrapper">
-				<aside class="post-read-more">
-					{{#foreach posts visibility="all"}}
-						{{> "grid-item" class="cropped left big"}}
-					{{/foreach}}
-				</aside>
-			</div>
-		{{/if}}
-	{{/get}}
+	{{> post-related}}
 
 {{/post}}
